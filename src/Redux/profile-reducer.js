@@ -3,6 +3,7 @@ import { usersAPI, profileAPI } from "../api/api";
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET-USER-PROFILE";
 const SET_STATUS = "SET-STATUS";
+const SAVE_PHOTO_SACCESS = "SAVE-PHOTO-SACCESS";
 
 let initialState = {
   postData: [
@@ -15,6 +16,7 @@ let initialState = {
   status: "",
 };
 
+//reducers
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
@@ -31,11 +33,14 @@ const profileReducer = (state = initialState, action) => {
       return { ...state, profile: action.profile };
     case SET_STATUS:
       return { ...state, status: action.status };
+    case SAVE_PHOTO_SACCESS:
+      return { ...state, profile: { ...state.profile, photos: action.photos } };
     default:
       return state;
   }
 };
 
+//actionCreators
 export const addPostActionCreator = (newPostBody) => {
   return {
     type: ADD_POST,
@@ -54,22 +59,35 @@ export const setStatus = (status) => {
     status,
   };
 };
+export const savePhotoSuccess = (photos) => {
+  return {
+    type: SAVE_PHOTO_SACCESS,
+    photos,
+  };
+};
 
-//redux-thunk
+//redux-thunks
 export const getUserProfile = (userId) => async (dispatch) => {
   let response = await usersAPI.getProfile(userId);
   dispatch(setUserProfile(response.data));
 };
-//redux-thunk
+
 export const getStatus = (userId) => async (dispatch) => {
   let response = await profileAPI.getStatus(userId);
   dispatch(setStatus(response.data));
 };
-//redux-thunk
+
 export const updateStatus = (status) => async (dispatch) => {
   let response = await profileAPI.updateStatus(status);
   if (response.data.resultCode === 0) {
     dispatch(setStatus(status));
+  }
+};
+
+export const savePhoto = (file) => async (dispatch) => {
+  let response = await profileAPI.savePhoto(file);
+  if (response.data.resultCode === 0) {
+    dispatch(savePhotoSuccess(response.data.data.photos));
   }
 };
 
