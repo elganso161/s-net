@@ -61,10 +61,6 @@ const Users = ({
                 <p>{elem.name}</p>
                 <p>{elem.status}</p>
               </div>
-              <div>
-                <p>{"elem.location.country"}</p>
-                <p>{"elem.location.city"}</p>
-              </div>
             </div>
           </li>
         ))}

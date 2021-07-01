@@ -21,14 +21,16 @@ const Paginator = ({
   return (
     <>
       <div className={style.paginatorBlock}>
-        {portionNumber > 1 && (
-          <button
-            onClick={() => {
-              setPortionNumber(portionNumber - 1);
-            }}>
-            PREV
-          </button>
-        )}
+        <div className={style.btnBlock}>
+          {portionNumber > 1 && (
+            <button
+              onClick={() => {
+                setPortionNumber(portionNumber - 1);
+              }}>
+              PREV
+            </button>
+          )}
+        </div>
         <ul className={style.paginList}>
           {pages
             .filter(
@@ -44,21 +46,23 @@ const Paginator = ({
                   style.pageNumber
                 )}
                 key={index}
-                onClick={(e) => {
+                onClick={() => {
                   onPageChanged(elem);
                 }}>
                 <p>{elem}</p>
               </li>
             ))}
         </ul>
-        {portionCount > portionNumber && (
-          <button
-            onClick={() => {
-              setPortionNumber(portionNumber + 1);
-            }}>
-            NEXT
-          </button>
-        )}
+        <div className={style.btnBlock}>
+          {portionCount > portionNumber && (
+            <button
+              onClick={() => {
+                setPortionNumber(portionNumber + 1);
+              }}>
+              NEXT
+            </button>
+          )}
+        </div>
       </div>
     </>
   );

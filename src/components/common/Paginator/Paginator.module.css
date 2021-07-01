@@ -23,6 +23,11 @@
     opacity: 0.2;
 }
 
+.btnBlock {
+    width: 100px;
+    height: 50px;
+}
+
 .paginList {
     display: flex;
     width: 600px;
