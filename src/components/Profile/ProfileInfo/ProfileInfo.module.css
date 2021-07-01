@@ -1,0 +1,22 @@
+.profileInfo {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.image img {
+    width: 200px;
+    height: 200px;
+}
+
+.description p {
+    width: 550px;
+}
+
+.descriptionListItem {
+    margin-bottom: 10px;
+}
+
+.fullName {
+    font-size: 26px;
+    text-transform: uppercase;
+}

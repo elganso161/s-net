@@ -1,0 +1,30 @@
+.nav {
+    grid-area: nav;
+    /* background-color: rgb(157, 163, 163); */
+    height: 100%;
+    min-height: 100vh;
+    border: 1px solid rgb(157, 163, 163);
+    border-radius: 5px;
+}
+
+.list {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 100px;
+}
+
+.item a {
+    font-family: 'Kaushan Script', cursive;
+    text-decoration: none;
+    font-size: 24px;
+    color: rgba(77, 76, 49, 10);
+}
+
+.item a:hover {
+    color: rgba(77, 76, 49, 0.7);
+}
+
+.item a.active {
+    color: rgba(190, 71, 23);
+    transition: 0.2s;
+}

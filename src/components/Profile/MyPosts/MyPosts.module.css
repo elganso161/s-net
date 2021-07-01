@@ -1,0 +1,15 @@
+.addPost {
+    margin-bottom: 50px;
+}
+
+.addPost textarea {
+    width: 50%;
+    height: 150px;
+    resize: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.myPosts h2 {
+    margin-bottom: 10px;
+}

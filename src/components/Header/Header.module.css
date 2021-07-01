@@ -1,0 +1,14 @@
+.header {
+    grid-area: header;
+    /* background-color: rgb(157, 163, 163); */
+    padding: 7px 20px 0 20px;
+    border: 1px solid rgb(157, 163, 163);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+}
