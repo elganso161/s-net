@@ -1,0 +1,2 @@
+(this["webpackJsonpsamurai-net"]=this["webpackJsonpsamurai-net"]||[]).push([[8],{304:function(t,e,n){"use strict";n.r(e);n(1);var s=n(0);e.default=function(){return Object(s.jsx)("div",{children:Object(s.jsx)("h2",{children:"setting"})})}}}]);
+//# sourceMappingURL=8.14b73003.chunk.js.map
