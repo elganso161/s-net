@@ -10,13 +10,16 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import Preloader from "./components/common/Preloader/Preloader";
 
-const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
+const DialogsContainer = React.lazy(() =>
+  import("./components/Dialogs/DialogsContainer")
+);
 const News = React.lazy(() => import("./components/News/News"));
 const Music = React.lazy(() => import("./components/Music/Music"));
-const UsersContainer = React.lazy(() => import("./components/Users/UsersContainer"));
+const UsersContainer = React.lazy(() =>
+  import("./components/Users/UsersContainer")
+);
 const Setting = React.lazy(() => import("./components/Setting/Setting"));
 const Login = React.lazy(() => import("./components/Login/Login"));
-
 
 class App extends React.Component {
   componentDidMount() {
