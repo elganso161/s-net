@@ -19,19 +19,16 @@ const ProfileInfo = (props) => {
   };
 
   const onSubmit = (formData) => {
-    props.saveProfile(formData);
-    setEditMode(false);
+    props.saveProfile(formData).then(() => {
+      setEditMode(false);
+    });
   };
   return (
     <>
       <div className={style.profileInfo}>
         <div className={style.image}>
           <img
-            src={
-              props.profile.photos.large != null
-                ? props.profile.photos.large
-                : avatar
-            }
+            src={props.profile.photos.large != null ? props.profile.photos.large : avatar}
             alt="userAvatar"
           />
           <div>

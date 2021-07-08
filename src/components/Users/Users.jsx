@@ -64,6 +64,12 @@ const Users = ({
             </div>
           </li>
         ))}
+        <Paginator
+          currentPage={currentPage}
+          onPageChanged={onPageChanged}
+          totalItemsCount={totalUsersCount}
+          pageSize={pageSize}
+        />
       </ul>
     </>
   );
